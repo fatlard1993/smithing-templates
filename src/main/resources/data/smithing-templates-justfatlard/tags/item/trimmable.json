@@ -1,0 +1,75 @@
+{
+  "values": [
+    "minecraft:diamond_sword",
+    "minecraft:golden_sword",
+    "minecraft:netherite_sword",
+    "minecraft:iron_sword",
+    "minecraft:copper_sword",
+    "minecraft:diamond_pickaxe",
+    "minecraft:golden_pickaxe",
+    "minecraft:netherite_pickaxe",
+    "minecraft:iron_pickaxe",
+    "minecraft:copper_pickaxe",
+    "minecraft:diamond_axe",
+    "minecraft:golden_axe",
+    "minecraft:netherite_axe",
+    "minecraft:iron_axe",
+    "minecraft:copper_axe",
+    "minecraft:diamond_shovel",
+    "minecraft:golden_shovel",
+    "minecraft:netherite_shovel",
+    "minecraft:iron_shovel",
+    "minecraft:copper_shovel",
+    "minecraft:diamond_hoe",
+    "minecraft:golden_hoe",
+    "minecraft:netherite_hoe",
+    "minecraft:iron_hoe",
+    "minecraft:copper_hoe",
+    "minecraft:diamond_spear",
+    "minecraft:golden_spear",
+    "minecraft:netherite_spear",
+    "minecraft:iron_spear",
+    "minecraft:copper_spear",
+    "minecraft:elytra",
+    {
+      "id": "emerald-tools-justfatlard:emerald_sword",
+      "required": false
+    },
+    {
+      "id": "quartz-tools-justfatlard:quartz_sword",
+      "required": false
+    },
+    {
+      "id": "emerald-tools-justfatlard:emerald_pickaxe",
+      "required": false
+    },
+    {
+      "id": "quartz-tools-justfatlard:quartz_pickaxe",
+      "required": false
+    },
+    {
+      "id": "emerald-tools-justfatlard:emerald_axe",
+      "required": false
+    },
+    {
+      "id": "quartz-tools-justfatlard:quartz_axe",
+      "required": false
+    },
+    {
+      "id": "emerald-tools-justfatlard:emerald_shovel",
+      "required": false
+    },
+    {
+      "id": "quartz-tools-justfatlard:quartz_shovel",
+      "required": false
+    },
+    {
+      "id": "emerald-tools-justfatlard:emerald_hoe",
+      "required": false
+    },
+    {
+      "id": "quartz-tools-justfatlard:quartz_hoe",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"id": "smithing-templates-gametest",
+	"version": "1.0.0",
+	"name": "Smithing Templates smoke test",
+	"description": "Loads the mod, joins a world, and fails if anything on the way threw.",
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-client-gametest": [
+			"justfatlard.smithing_templates.gametest.SmokeTest",
+			"justfatlard.smithing_templates.gametest.ToolsTakeTrims",
+			"justfatlard.smithing_templates.gametest.SuiteGearTakesTrims"
+		]
+	},
+	"depends": {
+		"smithing-templates-justfatlard": "*",
+		"fabric-client-gametest-api-v1": "*"
+	}
+}

@@ -1,0 +1,2001 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:model",
+        "model": "minecraft:item/iron_axe"
+      },
+      {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:trim",
+        "cases": [
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:bolt"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/bolt_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:coast"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/coast_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:dune"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/dune_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:eye"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/eye_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:flow"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/flow_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:host"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/host_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:raiser"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/raiser_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:rib"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/rib_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:sentry"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/sentry_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:shaper"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/shaper_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:silence"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/silence_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:snout"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/snout_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:spire"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/spire_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:tide"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/tide_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:vex"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/vex_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:ward"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/ward_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:wayfinder"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wayfinder_resin"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:amethyst",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_amethyst"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:copper",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_copper"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:diamond",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_diamond"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:emerald",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_emerald"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:gold",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_gold"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:iron",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_iron_darker"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:lapis",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_lapis"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_netherite"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_quartz"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:redstone",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_redstone"
+            }
+          },
+          {
+            "when": {
+              "material": "minecraft:resin",
+              "pattern": "minecraft:wild"
+            },
+            "model": {
+              "type": "minecraft:model",
+              "model": "smithing-templates-justfatlard:item/trim/axe/wild_resin"
+            }
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:empty"
+        }
+      }
+    ]
+  }
+}

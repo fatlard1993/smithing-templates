@@ -1,0 +1,22 @@
+{
+  "item.minecraft.smithing_template.armor_trim.applies_to": "Armor, Tools and Elytra",
+  "item.minecraft.smithing_template.armor_trim.base_slot_description": "Add armor, a tool or an elytra",
+  "trim_pattern.minecraft.bolt": "Bolt Trim",
+  "trim_pattern.minecraft.coast": "Coast Trim",
+  "trim_pattern.minecraft.dune": "Dune Trim",
+  "trim_pattern.minecraft.eye": "Eye Trim",
+  "trim_pattern.minecraft.flow": "Flow Trim",
+  "trim_pattern.minecraft.host": "Host Trim",
+  "trim_pattern.minecraft.raiser": "Raiser Trim",
+  "trim_pattern.minecraft.rib": "Rib Trim",
+  "trim_pattern.minecraft.sentry": "Sentry Trim",
+  "trim_pattern.minecraft.shaper": "Shaper Trim",
+  "trim_pattern.minecraft.silence": "Silence Trim",
+  "trim_pattern.minecraft.snout": "Snout Trim",
+  "trim_pattern.minecraft.spire": "Spire Trim",
+  "trim_pattern.minecraft.tide": "Tide Trim",
+  "trim_pattern.minecraft.vex": "Vex Trim",
+  "trim_pattern.minecraft.ward": "Ward Trim",
+  "trim_pattern.minecraft.wayfinder": "Wayfinder Trim",
+  "trim_pattern.minecraft.wild": "Wild Trim"
+}

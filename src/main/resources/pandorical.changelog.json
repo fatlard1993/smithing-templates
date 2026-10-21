@@ -1,0 +1,17 @@
+{
+  "overview": [
+    "The armor trim templates trim tools too: template, tool and material in the smithing table, the same three slots armor goes in.",
+    "Every pattern has its own inlay on every kind of vanilla tool, in the colour of the material. A trim makes what it is on last longer, and a gold one keeps piglins calm."
+  ],
+  "versions": {
+    "1.0.0": [
+      "All eighteen trim patterns go on swords, pickaxes, axes, shovels, hoes and spears, in all eleven materials. Wooden and stone tools take none.",
+      "Elytra take every pattern too, shown on the icon and on the wings while worn.",
+      "Emerald and quartz tools take every pattern when those mods are installed.",
+      "A tool in the trim of its own metal takes the darker shade, the way armor does.",
+      "A trimmed piece, armor or tool, lasts a quarter longer than a plain one.",
+      "Piglins leave alone anyone wearing a gold trim, as they do anyone wearing gold.",
+      "The patterns lose \"Armor\" from their names, and the templates say they apply to tools."
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "justfatlard.smithing_templates.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "PiglinAiMixin",
+    "SmithingTrimRecipeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
