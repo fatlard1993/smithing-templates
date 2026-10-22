@@ -4,15 +4,21 @@
     "A trimmed tool shows an inlay in the colour of the material, the way a trimmed armor icon does. A trim makes what it is on last longer, and a gold one keeps piglins calm."
   ],
   "versions": {
+    "1.0.1": [
+      "Shields take every pattern: the face carries vanilla's own worn trim for it, the helmet's band over the chestplate's emblem, on the icon and in the hand, raised or not.",
+      "A trimmed tool's icon shows one inlay in the colour of the material, the way a trimmed armor icon does, rather than a drawing per pattern.",
+      "Worn elytra show vanilla's own worn trim for the pattern.",
+      "The templates say they apply to tools, elytra and shields.",
+      "Needs Pandorical 15.24.0 or newer, whose language merge keeps the templates' new wording beside other mods' text."
+    ],
     "1.0.0": [
       "All eighteen trim patterns go on swords, pickaxes, axes, shovels, hoes and spears, in all eleven materials. Wooden and stone tools take none.",
       "Elytra take every pattern too, shown on the icon and on the wings while worn.",
-      "Shields take every pattern as a crest on the face, shown on the icon and in the hand, raised or not.",
       "Emerald and quartz tools take every pattern when those mods are installed.",
       "A tool in the trim of its own metal takes the darker shade, the way armor does.",
       "A trimmed piece, armor or tool, lasts a quarter longer than a plain one.",
       "Piglins leave alone anyone wearing a gold trim, as they do anyone wearing gold.",
-      "The patterns lose \"Armor\" from their names, and the templates say they apply to tools, elytra and shields."
+      "The patterns lose \"Armor\" from their names, and the templates say they apply to tools."
     ]
   }
 }
