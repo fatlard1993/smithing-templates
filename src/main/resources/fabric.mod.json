@@ -3,7 +3,7 @@
   "id": "smithing-templates-justfatlard",
   "version": "${version}",
   "name": "Smithing Templates",
-  "description": "Trim templates take tools and elytra as well as armor at the smithing table, and the pattern shows on them",
+  "description": "Trim templates take tools, elytra and shields as well as armor at the smithing table, and the pattern shows on them",
   "authors": [
     "justfatlard"
   ],
@@ -26,6 +26,6 @@
     "fabric-api": "${fabricApiVersion}",
     "minecraft": "${minecraftDependency}",
     "java": ">=25",
-    "pandorical": ">=15.0.0"
+    "pandorical": ">=15.24.0"
   }
 }

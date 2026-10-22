@@ -4,8 +4,8 @@ import justfatlard.pandorical.api.PandoricalApi;
 import net.fabricmc.api.ModInitializer;
 
 /**
- * Armor trim templates become smithing templates for tools and elytra too: a sword, pickaxe, axe,
- * shovel, hoe, spear or elytra takes a trim at the smithing table the same way armor does.
+ * Armor trim templates become smithing templates for tools, elytra and shields too: a sword, pickaxe, axe,
+ * shovel, hoe, spear, elytra or shield takes a trim at the smithing table the same way armor does.
  *
  * <p>The server half is data alone: one vanilla trim recipe per pattern, with the tools as its
  * base, so the template, the material and the screen are all vanilla's. What a trim looks like on

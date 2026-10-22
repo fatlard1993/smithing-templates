@@ -31,6 +31,7 @@
     "minecraft:iron_spear",
     "minecraft:copper_spear",
     "minecraft:elytra",
+    "minecraft:shield",
     {
       "id": "emerald-tools-justfatlard:emerald_sword",
       "required": false

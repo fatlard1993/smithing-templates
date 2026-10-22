@@ -12,11 +12,13 @@ import net.minecraft.client.CameraType;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.inventory.SmithingMenu;
 import net.minecraft.world.item.Item;
@@ -29,14 +31,15 @@ import net.minecraft.world.item.equipment.trim.TrimMaterials;
 import net.minecraft.world.item.equipment.trim.TrimPattern;
 import net.minecraft.world.item.equipment.trim.TrimPatterns;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 
 /**
- * A tool or an elytra goes in the smithing table's base slot and comes out trimmed and a quarter
+ * A tool, an elytra or a shield goes in the smithing table's base slot and comes out trimmed and a quarter
  * stronger, once only; shears and wooden and stone tools do not go in; a gold trim placates piglins; the templates read as
  * this mod renames them; and the pictures show the trim: the table with its result, a pack of
- * trimmed tools, and a trimmed elytra worn.
+ * trimmed tools, a trimmed elytra worn and trimmed shields on a wall.
  */
 public final class ToolsTakeTrims implements FabricClientGameTest {
 	private static final long SEED = 20261019L;
@@ -69,6 +72,8 @@ public final class ToolsTakeTrims implements FabricClientGameTest {
 					"an axe was refused from the base slot");
 				check(menu.getSlot(SmithingMenu.BASE_SLOT).mayPlace(new ItemStack(Items.ELYTRA)),
 					"an elytra was refused from the base slot");
+				check(menu.getSlot(SmithingMenu.BASE_SLOT).mayPlace(new ItemStack(Items.SHIELD)),
+					"a shield was refused from the base slot");
 				menu.getSlot(SmithingMenu.TEMPLATE_SLOT).set(new ItemStack(Items.SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE));
 				menu.getSlot(SmithingMenu.BASE_SLOT).set(new ItemStack(Items.NETHERITE_SWORD));
 				menu.getSlot(SmithingMenu.ADDITIONAL_SLOT).set(new ItemStack(Items.GOLD_INGOT));
@@ -112,7 +117,7 @@ public final class ToolsTakeTrims implements FabricClientGameTest {
 					.lookupOrThrow(Registries.TRIM_MATERIAL).listElements().toList();
 				Item[] tools = {Items.IRON_SWORD, Items.DIAMOND_PICKAXE, Items.GOLDEN_AXE, Items.NETHERITE_SHOVEL,
 					Items.COPPER_HOE, Items.IRON_SPEAR, Items.GOLDEN_SWORD, Items.NETHERITE_PICKAXE, Items.IRON_AXE,
-					Items.DIAMOND_SHOVEL, Items.GOLDEN_HOE, Items.DIAMOND_SPEAR, Items.COPPER_SWORD, Items.ELYTRA};
+					Items.DIAMOND_SHOVEL, Items.GOLDEN_HOE, Items.DIAMOND_SPEAR, Items.COPPER_SWORD, Items.ELYTRA, Items.SHIELD};
 				var pack = player.getInventory();
 				for (int i = 0; i < 36; i++) {
 					ItemStack tool = new ItemStack(tools[i % tools.length]);
@@ -142,7 +147,33 @@ public final class ToolsTakeTrims implements FabricClientGameTest {
 				client.options.setCameraType(CameraType.THIRD_PERSON_BACK);
 			});
 			Pictures.shoot(context, connection, "trimmed-elytra");
+
 			context.runOnClient(client -> client.options.setCameraType(CameraType.FIRST_PERSON));
+
+			// Three trimmed shields in frames on a wall, faced square on, where the whole of each
+			// face shows.
+			BlockPos wall = table.above(4);
+			server.runOnServer(s -> {
+				var level = s.overworld();
+				var materials = s.registryAccess().lookupOrThrow(Registries.TRIM_MATERIAL);
+				var patterns = s.registryAccess().lookupOrThrow(Registries.TRIM_PATTERN);
+				List<ArmorTrim> trims = List.of(
+					new ArmorTrim(materials.getOrThrow(TrimMaterials.GOLD), patterns.getOrThrow(TrimPatterns.WARD)),
+					new ArmorTrim(materials.getOrThrow(TrimMaterials.DIAMOND), patterns.getOrThrow(TrimPatterns.VEX)),
+					new ArmorTrim(materials.getOrThrow(TrimMaterials.AMETHYST), patterns.getOrThrow(TrimPatterns.SILENCE)));
+				for (int i = 0; i < trims.size(); i++) {
+					BlockPos at = wall.east(i - 1);
+					level.setBlockAndUpdate(at.south(), Blocks.SPRUCE_PLANKS.defaultBlockState());
+					ItemStack shield = new ItemStack(Items.SHIELD);
+					shield.set(DataComponents.TRIM, trims.get(i));
+					ItemFrame frame = new ItemFrame(level, at, Direction.NORTH);
+					frame.setItem(shield);
+					level.addFreshEntity(frame);
+				}
+			});
+			server.runCommand("gamemode spectator @a");
+			Pictures.look(server, Vec3.atCenterOf(wall).add(0, -1.62, -1.5), Vec3.atCenterOf(wall));
+			Pictures.shoot(context, connection, "trimmed-shields");
 
 			// Which of two lang files wins comes down to the order namespaces load in, so it is
 			// checked last, after the pictures, rather than assumed.

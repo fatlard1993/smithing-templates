@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "smithing-templates-justfatlard:trims/items/spear_gold"
+  }
+}

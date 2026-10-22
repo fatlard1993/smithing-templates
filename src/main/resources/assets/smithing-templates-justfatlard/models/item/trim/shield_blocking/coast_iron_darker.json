@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:item/shield_blocking",
+  "textures": {
+    "trim": "smithing-templates-justfatlard:trims/items/shield/coast_iron_darker"
+  },
+  "elements": [
+    {
+      "from": [
+        -6,
+        -11,
+        -2.1
+      ],
+      "to": [
+        6,
+        11,
+        -2.1
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            11,
+            0,
+            0
+          ],
+          "texture": "#trim"
+        }
+      }
+    }
+  ]
+}
