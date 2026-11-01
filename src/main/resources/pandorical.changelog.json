@@ -1,9 +1,12 @@
 {
   "overview": [
     "The armor trim templates trim tools too: template, tool and material in the smithing table, the same three slots armor goes in.",
-    "A trimmed tool shows an inlay in the colour of the material, the way a trimmed armor icon does. A trim makes what it is on last longer, and a gold one keeps piglins calm."
+    "A trimmed tool shows its pattern as an inlay in the colour of the material. A trim makes what it is on last longer, and a gold one keeps piglins calm."
   ],
   "versions": {
+    "1.0.2": [
+      "A trimmed tool's icon shows its pattern again: every pattern has its own inlay on every tool, in the colour of the material."
+    ],
     "1.0.1": [
       "Shields take every pattern: the face carries vanilla's own worn trim for it, the helmet's band over the chestplate's emblem, on the icon and in the hand, raised or not.",
       "A trimmed tool's icon shows one inlay in the colour of the material, the way a trimmed armor icon does, rather than a drawing per pattern.",

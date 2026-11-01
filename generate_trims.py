@@ -6,11 +6,11 @@ recipes, and the wording that tells players the templates take tools.
 Vanilla is the source of truth for what exists. The patterns come from its own
 armor trim recipes, the colours from its own trim palettes, the tools from its
 own tool tags, and each tool's item definition is vanilla's with the trim
-layered on top. All this script adds is the art in art/. A tool's icon shows its
-trim the way vanilla's armor icons do: one inlay per kind of tool, the same for
-every pattern, drawn once over the silhouette every tool of that kind shares and
-recoloured per material by the game's paletted atlas. The pattern itself is drawn
-where there is room for it: on a shield's face and on a worn elytra's wings.
+layered on top. All this script adds is the art in art/: one inlay per pattern per
+kind of tool, drawn once over the silhouette every tool of that kind shares and
+recoloured per material by the game's paletted atlas, so a tool's icon shows which
+pattern it carries. A shield's face and a worn elytra's wings take vanilla's own
+worn trim for the pattern instead.
 
 A pattern vanilla adds that has no art stops the script rather than shipping a
 trim with nothing drawn on it.
@@ -325,16 +325,11 @@ def tools(kind):
     return [item for item in source if not path_of(item).startswith(("wooden_", "stone_"))]
 
 
-def overlay_texture(kind, pattern=None):
-    """A tool's one inlay, or a shield's art for one pattern."""
-    if pattern is None:
-        return "%s:trims/items/%s" % (MOD_ID, kind)
+def overlay_texture(kind, pattern):
     return "%s:trims/items/%s/%s" % (MOD_ID, kind, path_of(pattern))
 
 
-def overlay_model(kind, palette, pattern=None):
-    if pattern is None:
-        return "%s:item/trim/%s_%s" % (MOD_ID, kind, palette)
+def overlay_model(kind, palette, pattern):
     return "%s:item/trim/%s/%s_%s" % (MOD_ID, kind, path_of(pattern), palette)
 
 
@@ -342,30 +337,43 @@ def vanilla_texture(item):
     return decode_png(jar_read("assets/minecraft/textures/item/%s.png" % path_of(item)))
 
 
-def check_fits(kind, rows, textures):
+def inlays(kind, patterns):
+    """Pattern to its drawing for this kind of tool. A pattern with no drawing stops
+    the script rather than shipping a trim with nothing on it."""
+    art = read_art(kind)
+    missing = [path_of(p) for p in patterns if path_of(p) not in art]
+    if missing:
+        sys.exit("art/%s.txt has no drawing for %s" % (kind, ", ".join(missing)))
+    return {pattern: art[path_of(pattern)] for pattern in patterns}
+
+
+def check_fits(kind, drawings, textures):
     """Every lit pixel lands on every tool of its kind, so no material ever paints
     a pixel into the air beside one."""
     for tool, texture in textures.items():
-        for y, line in enumerate(rows):
-            for x, c in enumerate(line):
-                if c != "." and texture[y][x][3] == 0:
-                    sys.exit("%s's inlay paints off %s at %d,%d" % (kind, tool, x, y))
+        for pattern, rows in drawings.items():
+            for y, line in enumerate(rows):
+                for x, c in enumerate(line):
+                    if c != "." and texture[y][x][3] == 0:
+                        sys.exit("%s/%s paints off %s at %d,%d" % (kind, path_of(pattern), tool, x, y))
 
 
-def write_overlay(kind, rows, base):
-    pixels = [[base[SHADES[c]] if c != "." else (0, 0, 0, 0) for c in line] for line in rows]
-    write_png(os.path.join(ASSETS, "textures", path_of(overlay_texture(kind)) + ".png"), pixels)
+def write_overlays(kind, drawings, base):
+    for pattern, rows in drawings.items():
+        pixels = [[base[SHADES[c]] if c != "." else (0, 0, 0, 0) for c in line] for line in rows]
+        write_png(os.path.join(ASSETS, "textures", path_of(overlay_texture(kind, pattern)) + ".png"), pixels)
 
 
-def write_models(kind, permutations, tool_ids):
+def write_models(kind, patterns, permutations, tool_ids):
     """Each overlay is held the way its tool's own model is, so the two stay lined
     up in the hand: a sword is handheld, an elytra is not."""
     parent = jar_json("assets/minecraft/models/item/%s.json" % path_of(tool_ids[0]))["parent"]
-    for palette in permutations:
-        write_json(os.path.join(ASSETS, "models", path_of(overlay_model(kind, palette)) + ".json"), {
-            "parent": parent,
-            "textures": {"layer0": "%s_%s" % (overlay_texture(kind), palette)},
-        })
+    for pattern in patterns:
+        for palette in permutations:
+            write_json(os.path.join(ASSETS, "models", path_of(overlay_model(kind, palette, pattern)) + ".json"), {
+                "parent": parent,
+                "textures": {"layer0": "%s_%s" % (overlay_texture(kind, pattern), palette)},
+            })
 
 
 def palette_for(palette, darker, permutations):
@@ -380,26 +388,15 @@ def trimmed(leaf, select):
     return {"type": "minecraft:composite", "models": [leaf, dict(select, fallback={"type": "minecraft:empty"})]}
 
 
-def by_material(kind, permutations, material_palettes, darker):
-    """The same select vanilla's armor icons use: the material picks the colour, and
-    every pattern looks alike."""
-    return {
-        "type": "minecraft:select",
-        "property": "minecraft:trim_material",
-        "cases": [{"when": material,
-                   "model": {"type": "minecraft:model",
-                             "model": overlay_model(kind, palette_for(palette, darker, permutations))}}
-                  for material, palette in sorted(material_palettes.items())],
-    }
-
-
-def by_pattern(kind, patterns, permutations, material_palettes):
+def by_pattern(kind, patterns, permutations, material_palettes, darker=None):
+    """The pattern picks the drawing and the material its colour."""
     return {
         "type": "minecraft:select",
         "property": "minecraft:component",
         "component": "minecraft:trim",
         "cases": [{"when": {"material": material, "pattern": pattern},
-                   "model": {"type": "minecraft:model", "model": overlay_model(kind, palette, pattern)}}
+                   "model": {"type": "minecraft:model",
+                             "model": overlay_model(kind, palette_for(palette, darker, permutations), pattern)}}
                   for pattern in patterns for material, palette in sorted(material_palettes.items())],
     }
 
@@ -437,7 +434,7 @@ def undress(node):
     return {k: undress(v) for k, v in node.items()}
 
 
-def write_item_definitions(kind, permutations, material_palettes, tool_ids):
+def write_item_definitions(kind, patterns, permutations, material_palettes, tool_ids):
     """Vanilla's own definition for each tool, with the trim drawn over it. A tool
     with no trim draws nothing on top and looks exactly as it always has."""
     for tool in tool_ids:
@@ -445,7 +442,7 @@ def write_item_definitions(kind, permutations, material_palettes, tool_ids):
         darker = TIER_PALETTE.get(name.split("_")[0])
         definition = jar_json("assets/minecraft/items/%s.json" % name)
         dressed = dress(definition, uses("minecraft:item/" + name),
-            lambda leaf: trimmed(leaf, by_material(kind, permutations, material_palettes, darker)))
+            lambda leaf: trimmed(leaf, by_pattern(kind, patterns, permutations, material_palettes, darker)))
         if dressed == definition:
             sys.exit("%s's item definition never uses minecraft:item/%s" % (tool, name))
         write_json(os.path.join(RESOURCES, "assets/minecraft/items/%s.json" % name), dressed)
@@ -517,12 +514,12 @@ def suite_texture(item):
     return decode_png(open(os.path.join(assets, "textures", texture + ".png"), "rb").read())
 
 
-def dress_suite_tools(kind, permutations, material_palettes, found):
+def dress_suite_tools(kind, patterns, permutations, material_palettes, found):
     for item, path in found.items():
         namespace, name = item.split(":", 1)
         definition = undress(json.load(open(path)))
         dressed = dress(definition, uses("%s:item/%s" % (namespace, name)),
-            lambda leaf: trimmed(leaf, by_material(kind, permutations, material_palettes, None)))
+            lambda leaf: trimmed(leaf, by_pattern(kind, patterns, permutations, material_palettes)))
         if dressed == definition:
             sys.exit("%s's item definition never uses %s:item/%s" % (item, namespace, name))
         write_json(path, dressed)
@@ -669,7 +666,7 @@ def write_icon(base):
         for x, px in enumerate(row):
             if px is not None:
                 put(5 + x, 6 + y, gold[base.index(px)])
-    for y, line in enumerate(read_art("sword")["trim"]):
+    for y, line in enumerate(read_art("sword")["silence"]):
         for x, c in enumerate(line):
             put(14 + x, 13 + y, diamond[SHADES[c]] if c != "." else sword[y][x])
     icon = [[px for px in line for _ in range(4)] for line in icon for _ in range(4)]
@@ -726,14 +723,14 @@ if __name__ == "__main__":
         found = suite_tools(kind)
         silhouettes = {tool: vanilla_texture(tool) for tool in tool_ids}
         silhouettes.update({item: suite_texture(item) for item in found})
-        inlay = read_art(kind)["trim"]
-        check_fits(kind, inlay, silhouettes)
-        write_overlay(kind, inlay, base)
-        write_models(kind, permutations, tool_ids)
-        write_item_definitions(kind, permutations, material_palettes, tool_ids)
-        dress_suite_tools(kind, permutations, material_palettes, found)
+        drawings = inlays(kind, ordered)
+        check_fits(kind, drawings, silhouettes)
+        write_overlays(kind, drawings, base)
+        write_models(kind, ordered, permutations, tool_ids)
+        write_item_definitions(kind, ordered, permutations, material_palettes, tool_ids)
+        dress_suite_tools(kind, ordered, permutations, material_palettes, found)
         suite_ids += list(found)
-        textures.append(overlay_texture(kind))
+        textures += [overlay_texture(kind, p) for p in ordered]
         all_tools += tool_ids
 
     textures += write_shield(ordered, permutations, material_palettes, base)

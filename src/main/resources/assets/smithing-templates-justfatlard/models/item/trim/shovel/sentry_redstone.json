@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "smithing-templates-justfatlard:trims/items/shovel/sentry_redstone"
+  }
+}
