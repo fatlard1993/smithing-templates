@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/crossbow",
+  "textures": {
+    "layer0": "smithing-templates-justfatlard:trims/items/crossbow/snout_gold_darker"
+  }
+}

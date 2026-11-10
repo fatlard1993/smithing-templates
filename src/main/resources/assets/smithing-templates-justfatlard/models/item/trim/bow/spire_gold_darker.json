@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "smithing-templates-justfatlard:trims/items/bow/spire_gold_darker"
+  }
+}

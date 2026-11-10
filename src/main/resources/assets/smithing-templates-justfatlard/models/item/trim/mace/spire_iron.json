@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_mace",
+  "textures": {
+    "layer0": "smithing-templates-justfatlard:trims/items/mace/spire_iron"
+  }
+}

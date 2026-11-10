@@ -1,6 +1,6 @@
 {
-  "item.minecraft.smithing_template.armor_trim.applies_to": "Armor, Tools, Elytra and Shields",
-  "item.minecraft.smithing_template.armor_trim.base_slot_description": "Add armor, a tool, an elytra or a shield",
+  "item.minecraft.smithing_template.armor_trim.applies_to": "Armor, Tools, Weapons, Elytra and Shields",
+  "item.minecraft.smithing_template.armor_trim.base_slot_description": "Add armor, a tool, a weapon, an elytra or a shield",
   "trim_pattern.minecraft.bolt": "Bolt Trim",
   "trim_pattern.minecraft.coast": "Coast Trim",
   "trim_pattern.minecraft.dune": "Dune Trim",

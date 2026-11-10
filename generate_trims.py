@@ -229,7 +229,7 @@ def write_json(path, value):
 
 
 def path_of(identifier):
-    return identifier.split(":", 1)[1]
+    return identifier.split(":", 1)[-1]
 
 
 # What takes a trim besides armor, by kind: a vanilla tag, or the items themselves
@@ -241,7 +241,18 @@ KINDS = {
     "shovel": "shovels",
     "hoe": "hoes",
     "spear": "spears",
+    "bow": ["minecraft:bow"],
+    "crossbow": ["minecraft:crossbow"],
+    "mace": ["minecraft:mace"],
     "elytra": ["minecraft:elytra"],
+}
+
+# A bow and a crossbow change drawing as they are drawn and loaded. Every drawing takes the
+# inlay, so the trim stays on through the shot.
+FRAMES = {
+    "minecraft:bow": ["bow_pulling_0", "bow_pulling_1", "bow_pulling_2"],
+    "minecraft:crossbow": ["crossbow_pulling_0", "crossbow_pulling_1", "crossbow_pulling_2",
+                           "crossbow_arrow", "crossbow_firework"],
 }
 
 # Where there is room for a pattern, on a shield's face and a worn elytra's wings, it is
@@ -318,7 +329,7 @@ def materials():
 
 
 def tools(kind):
-    """The items of a kind that take a trim: wood and stone are too plain a stock to inlay."""
+    """The items of a kind that take a trim: wooden and stone tools are too plain a stock to inlay."""
     source = KINDS[kind]
     if not isinstance(source, list):
         source = jar_json("data/minecraft/tags/item/%s.json" % source)["values"]
@@ -333,8 +344,14 @@ def overlay_model(kind, palette, pattern):
     return "%s:item/trim/%s/%s_%s" % (MOD_ID, kind, path_of(pattern), palette)
 
 
-def vanilla_texture(item):
-    return decode_png(jar_read("assets/minecraft/textures/item/%s.png" % path_of(item)))
+def flat_models(tool):
+    """The tool's flat inventory model and every frame it changes to."""
+    return ["minecraft:item/" + name for name in [path_of(tool)] + FRAMES.get(tool, [])]
+
+
+def vanilla_texture(model):
+    layer0 = jar_json("assets/minecraft/models/%s.json" % path_of(model))["textures"]["layer0"]
+    return decode_png(jar_read("assets/minecraft/textures/%s.png" % path_of(layer0)))
 
 
 def inlays(kind, patterns):
@@ -347,15 +364,20 @@ def inlays(kind, patterns):
     return {pattern: art[path_of(pattern)] for pattern in patterns}
 
 
-def check_fits(kind, drawings, textures):
+def check_fits(kind, drawings, silhouettes):
     """Every lit pixel lands on every tool of its kind, so no material ever paints
-    a pixel into the air beside one."""
-    for tool, texture in textures.items():
+    a pixel into the air beside one, and on a pixel every frame of the tool draws
+    alike, so no inlay covers a string or a loaded arrow."""
+    for tool, frames in silhouettes.items():
         for pattern, rows in drawings.items():
             for y, line in enumerate(rows):
                 for x, c in enumerate(line):
-                    if c != "." and texture[y][x][3] == 0:
+                    if c == ".":
+                        continue
+                    if any(frame[y][x][3] == 0 for frame in frames):
                         sys.exit("%s/%s paints off %s at %d,%d" % (kind, path_of(pattern), tool, x, y))
+                    if any(frame[y][x] != frames[0][y][x] for frame in frames):
+                        sys.exit("%s/%s paints over what moves on %s at %d,%d" % (kind, path_of(pattern), tool, x, y))
 
 
 def write_overlays(kind, drawings, base):
@@ -366,8 +388,11 @@ def write_overlays(kind, drawings, base):
 
 def write_models(kind, patterns, permutations, tool_ids):
     """Each overlay is held the way its tool's own model is, so the two stay lined
-    up in the hand: a sword is handheld, an elytra is not."""
-    parent = jar_json("assets/minecraft/models/item/%s.json" % path_of(tool_ids[0]))["parent"]
+    up in the hand: a sword is handheld, an elytra is not. A bow's own model says how
+    it is held, so its overlay is parented on the bow itself."""
+    flat = flat_models(tool_ids[0])[0]
+    model = jar_json("assets/minecraft/models/%s.json" % path_of(flat))
+    parent = flat if "display" in model else model["parent"]
     for pattern in patterns:
         for palette in permutations:
             write_json(os.path.join(ASSETS, "models", path_of(overlay_model(kind, palette, pattern)) + ".json"), {
@@ -401,10 +426,20 @@ def by_pattern(kind, patterns, permutations, material_palettes, darker=None):
     }
 
 
-def uses(flat_model):
-    """Matches every use of the tool's flat inventory model and nothing else: a
-    spear's model in the hand is a different, larger drawing that this art does not fit."""
-    return lambda node: node.get("type") == "minecraft:model" and node.get("model") == flat_model
+def uses(models):
+    """Matches every use of the tool's flat models and nothing else: a spear's model
+    in the hand is a different, larger drawing that this art does not fit, and a torn
+    elytra's icon shows no trim."""
+    return lambda node: node.get("type") == "minecraft:model" and node.get("model") in models
+
+
+def models_in(node):
+    if isinstance(node, list):
+        return set().union(*map(models_in, node))
+    if not isinstance(node, dict):
+        return set()
+    found = {node["model"]} if node.get("type") == "minecraft:model" else set()
+    return found.union(*map(models_in, node.values()))
 
 
 def dress(node, matches, wrap):
@@ -441,10 +476,11 @@ def write_item_definitions(kind, patterns, permutations, material_palettes, tool
         name = path_of(tool)
         darker = TIER_PALETTE.get(name.split("_")[0])
         definition = jar_json("assets/minecraft/items/%s.json" % name)
-        dressed = dress(definition, uses("minecraft:item/" + name),
+        missing = set(flat_models(tool)) - models_in(definition)
+        if missing:
+            sys.exit("%s's item definition never uses %s" % (tool, ", ".join(sorted(missing))))
+        dressed = dress(definition, uses(flat_models(tool)),
             lambda leaf: trimmed(leaf, by_pattern(kind, patterns, permutations, material_palettes, darker)))
-        if dressed == definition:
-            sys.exit("%s's item definition never uses minecraft:item/%s" % (tool, name))
         write_json(os.path.join(RESOURCES, "assets/minecraft/items/%s.json" % name), dressed)
 
 
@@ -518,7 +554,7 @@ def dress_suite_tools(kind, patterns, permutations, material_palettes, found):
     for item, path in found.items():
         namespace, name = item.split(":", 1)
         definition = undress(json.load(open(path)))
-        dressed = dress(definition, uses("%s:item/%s" % (namespace, name)),
+        dressed = dress(definition, uses(["%s:item/%s" % (namespace, name)]),
             lambda leaf: trimmed(leaf, by_pattern(kind, patterns, permutations, material_palettes)))
         if dressed == definition:
             sys.exit("%s's item definition never uses %s:item/%s" % (item, namespace, name))
@@ -627,8 +663,8 @@ def write_lang(patterns):
     template says what it applies to now."""
     vanilla = json.loads(jar_read("assets/minecraft/lang/en_us.json"))
     lang = {
-        "item.minecraft.smithing_template.armor_trim.applies_to": "Armor, Tools, Elytra and Shields",
-        "item.minecraft.smithing_template.armor_trim.base_slot_description": "Add armor, a tool, an elytra or a shield",
+        "item.minecraft.smithing_template.armor_trim.applies_to": "Armor, Tools, Weapons, Elytra and Shields",
+        "item.minecraft.smithing_template.armor_trim.base_slot_description": "Add armor, a tool, a weapon, an elytra or a shield",
     }
     for pattern in sorted(patterns):
         key = "trim_pattern.minecraft.%s" % path_of(pattern)
@@ -721,8 +757,8 @@ if __name__ == "__main__":
     for kind in KINDS:
         tool_ids = tools(kind)
         found = suite_tools(kind)
-        silhouettes = {tool: vanilla_texture(tool) for tool in tool_ids}
-        silhouettes.update({item: suite_texture(item) for item in found})
+        silhouettes = {tool: [vanilla_texture(m) for m in flat_models(tool)] for tool in tool_ids}
+        silhouettes.update({item: [suite_texture(item)] for item in found})
         drawings = inlays(kind, ordered)
         check_fits(kind, drawings, silhouettes)
         write_overlays(kind, drawings, base)

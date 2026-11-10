@@ -36,7 +36,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.List;
 
 /**
- * A tool, an elytra or a shield goes in the smithing table's base slot and comes out trimmed and a quarter
+ * A tool, a bow, a crossbow, a mace, an elytra or a shield goes in the smithing table's base slot and comes out trimmed and a quarter
  * stronger, once only; shears and wooden and stone tools do not go in; a gold trim placates piglins; the templates read as
  * this mod renames them; and the pictures show the trim: the table with its result, a pack of
  * trimmed tools, a trimmed elytra worn and trimmed shields on a wall.
@@ -70,6 +70,10 @@ public final class ToolsTakeTrims implements FabricClientGameTest {
 					"a stone pickaxe went in the base slot");
 				check(menu.getSlot(SmithingMenu.BASE_SLOT).mayPlace(new ItemStack(Items.IRON_AXE)),
 					"an axe was refused from the base slot");
+				for (Item weapon : List.of(Items.BOW, Items.CROSSBOW, Items.MACE)) {
+					check(menu.getSlot(SmithingMenu.BASE_SLOT).mayPlace(new ItemStack(weapon)),
+						"a " + weapon + " was refused from the base slot");
+				}
 				check(menu.getSlot(SmithingMenu.BASE_SLOT).mayPlace(new ItemStack(Items.ELYTRA)),
 					"an elytra was refused from the base slot");
 				check(menu.getSlot(SmithingMenu.BASE_SLOT).mayPlace(new ItemStack(Items.SHIELD)),
@@ -117,7 +121,8 @@ public final class ToolsTakeTrims implements FabricClientGameTest {
 					.lookupOrThrow(Registries.TRIM_MATERIAL).listElements().toList();
 				Item[] tools = {Items.IRON_SWORD, Items.DIAMOND_PICKAXE, Items.GOLDEN_AXE, Items.NETHERITE_SHOVEL,
 					Items.COPPER_HOE, Items.IRON_SPEAR, Items.GOLDEN_SWORD, Items.NETHERITE_PICKAXE, Items.IRON_AXE,
-					Items.DIAMOND_SHOVEL, Items.GOLDEN_HOE, Items.DIAMOND_SPEAR, Items.COPPER_SWORD, Items.ELYTRA, Items.SHIELD};
+					Items.DIAMOND_SHOVEL, Items.GOLDEN_HOE, Items.DIAMOND_SPEAR, Items.COPPER_SWORD, Items.BOW,
+					Items.CROSSBOW, Items.MACE, Items.ELYTRA, Items.SHIELD};
 				var pack = player.getInventory();
 				for (int i = 0; i < 36; i++) {
 					ItemStack tool = new ItemStack(tools[i % tools.length]);

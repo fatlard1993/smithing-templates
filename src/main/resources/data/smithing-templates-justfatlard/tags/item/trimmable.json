@@ -30,6 +30,9 @@
     "minecraft:netherite_spear",
     "minecraft:iron_spear",
     "minecraft:copper_spear",
+    "minecraft:bow",
+    "minecraft:crossbow",
+    "minecraft:mace",
     "minecraft:elytra",
     "minecraft:shield",
     {

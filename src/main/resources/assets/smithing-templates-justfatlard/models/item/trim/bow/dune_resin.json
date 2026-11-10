@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "smithing-templates-justfatlard:trims/items/bow/dune_resin"
+  }
+}
