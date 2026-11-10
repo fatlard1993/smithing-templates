@@ -4,6 +4,10 @@
     "A trimmed tool shows its pattern as an inlay in the colour of the material. A trim makes what it is on last longer, and a gold one keeps piglins calm."
   ],
   "versions": {
+    "1.0.3": [
+      "Bows, crossbows and the mace take every pattern. A bow keeps its trim through the whole draw and a crossbow while loaded, and the inlay never covers the string or the arrow.",
+      "The templates say they apply to weapons too."
+    ],
     "1.0.2": [
       "A trimmed tool's icon shows its pattern again: every pattern has its own inlay on every tool, in the colour of the material."
     ],
