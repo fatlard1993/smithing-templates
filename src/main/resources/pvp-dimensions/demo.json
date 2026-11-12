@@ -1,0 +1,55 @@
+{
+  "demo": {
+    "name": "Smithing Templates",
+    "icon": "minecraft:silence_armor_trim_smithing_template",
+    "about": [
+      "The armor trim templates trim tools, bows, maces, shields and elytra too, and any trimmed piece lasts a quarter longer.",
+      "Put a template, a tool and a material in the smithing table and see the inlay. Piglins roam here: give your chestplate a gold trim and they leave you alone."
+    ]
+  },
+  "pvp_preset": 1,
+  "needs": ["smithing-templates-justfatlard"],
+  "preset": {
+    "name": "Smithing Templates",
+    "icon": "minecraft:silence_armor_trim_smithing_template",
+    "pvp": false,
+    "game_mode": "survival",
+    "entry_kit": [
+      {"slot": 0, "item": {"id": "minecraft:smithing_table", "count": 1}},
+      {"slot": 1, "item": {"id": "minecraft:diamond_sword", "count": 1}},
+      {"slot": 2, "item": {"id": "minecraft:iron_pickaxe", "count": 1}},
+      {"slot": 3, "item": {"id": "minecraft:bow", "count": 1}},
+      {"slot": 4, "item": {"id": "minecraft:shield", "count": 1}},
+      {"slot": 5, "item": {"id": "minecraft:mace", "count": 1}},
+      {"slot": 6, "item": {"id": "minecraft:cooked_beef", "count": 8}},
+      {"slot": 9, "item": {"id": "minecraft:silence_armor_trim_smithing_template", "count": 2}},
+      {"slot": 10, "item": {"id": "minecraft:bolt_armor_trim_smithing_template", "count": 2}},
+      {"slot": 11, "item": {"id": "minecraft:eye_armor_trim_smithing_template", "count": 2}},
+      {"slot": 12, "item": {"id": "minecraft:vex_armor_trim_smithing_template", "count": 2}},
+      {"slot": 13, "item": {"id": "minecraft:ward_armor_trim_smithing_template", "count": 2}},
+      {"slot": 14, "item": {"id": "minecraft:rib_armor_trim_smithing_template", "count": 2}},
+      {"slot": 18, "item": {"id": "minecraft:gold_ingot", "count": 4}},
+      {"slot": 19, "item": {"id": "minecraft:diamond", "count": 4}},
+      {"slot": 20, "item": {"id": "minecraft:amethyst_shard", "count": 4}},
+      {"slot": 21, "item": {"id": "minecraft:emerald", "count": 4}},
+      {"slot": 22, "item": {"id": "minecraft:redstone", "count": 4}},
+      {"slot": 23, "item": {"id": "minecraft:copper_ingot", "count": 4}},
+      {"slot": 24, "item": {"id": "minecraft:lapis_lazuli", "count": 4}},
+      {"slot": 25, "item": {"id": "minecraft:quartz", "count": 4}},
+      {"slot": 38, "item": {"id": "minecraft:iron_chestplate", "count": 1}},
+      {"slot": 15, "item": {"id": "minecraft:elytra", "count": 1}}
+    ],
+    "respawn_kit": "entry",
+    "goal": "time",
+    "mobs": "always",
+    "mob_rarity": "rare",
+    "mob_default": "off",
+    "mob_levels": { "minecraft:piglin": "normal" },
+    "life": 15,
+    "size": 3,
+    "world": "nether",
+    "shape": "natural",
+    "biome": "minecraft:crimson_forest",
+    "weather": "clear"
+  }
+}
