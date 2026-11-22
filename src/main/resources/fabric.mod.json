@@ -3,7 +3,7 @@
   "id": "smithing-templates-justfatlard",
   "version": "${version}",
   "name": "Smithing Templates",
-  "description": "Trim templates take tools, elytra and shields as well as armor at the smithing table, and the pattern shows on them",
+  "description": "Trim templates for tools, elytra and shields as well as armor",
   "authors": [
     "justfatlard"
   ],
